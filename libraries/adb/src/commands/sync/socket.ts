@@ -1,13 +1,13 @@
 import type {
     MaybeConsumable,
     WritableStreamDefaultWriter,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     BufferCombiner,
     BufferedReadableStream,
     Consumable,
-} from "@yume-chan/stream-extra";
-import type { AsyncExactReadable } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { AsyncExactReadable } from "@gasol/struct";
 
 import type { AdbSocket } from "../../adb.js";
 import { AutoResetEvent } from "../../utils/index.js";

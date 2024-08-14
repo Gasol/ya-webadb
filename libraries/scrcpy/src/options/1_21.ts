@@ -1,8 +1,8 @@
 // cspell: ignore autosync
 
 import { PromiseResolver } from "@yume-chan/async";
-import type { AsyncExactReadable } from "@yume-chan/struct";
-import Struct, { placeholder } from "@yume-chan/struct";
+import type { AsyncExactReadable } from "@gasol/struct";
+import Struct, { placeholder } from "@gasol/struct";
 
 import type { ScrcpySetClipboardControlMessage } from "../control/index.js";
 

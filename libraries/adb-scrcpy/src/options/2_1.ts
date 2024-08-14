@@ -1,9 +1,9 @@
-import type { Adb } from "@yume-chan/adb";
+import type { Adb } from "@gasol/adb";
 import type {
     ScrcpyDisplay,
     ScrcpyEncoder,
     ScrcpyOptionsInit2_1,
-} from "@yume-chan/scrcpy";
+} from "@gasol/scrcpy";
 
 import type { AdbScrcpyConnection } from "../connection.js";
 

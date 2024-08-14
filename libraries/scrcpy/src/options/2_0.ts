@@ -1,11 +1,11 @@
-import { getUint32BigEndian } from "@yume-chan/no-data-view";
-import type { ReadableStream } from "@yume-chan/stream-extra";
+import { getUint32BigEndian } from "@gasol/no-data-view";
+import type { ReadableStream } from "@gasol/stream-extra";
 import {
     BufferedReadableStream,
     PushReadableStream,
-} from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
-import Struct, { placeholder } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
+import Struct, { placeholder } from "@gasol/struct";
 
 import type {
     AndroidMotionEventAction,

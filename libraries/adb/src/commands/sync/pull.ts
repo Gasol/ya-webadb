@@ -1,6 +1,6 @@
-import type { ReadableStream } from "@yume-chan/stream-extra";
-import { PushReadableStream } from "@yume-chan/stream-extra";
-import Struct from "@yume-chan/struct";
+import type { ReadableStream } from "@gasol/stream-extra";
+import { PushReadableStream } from "@gasol/stream-extra";
+import Struct from "@gasol/struct";
 
 import { AdbSyncRequestId, adbSyncWriteRequest } from "./request.js";
 import { AdbSyncResponseId, adbSyncReadResponses } from "./response.js";

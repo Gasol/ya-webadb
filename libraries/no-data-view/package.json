@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/no-data-view",
+    "name": "@gasol/no-data-view",
     "version": "0.0.24",
     "description": "Plain methods to avoid creating `DataView`s",
     "keywords": [],
@@ -9,14 +9,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/packages/no-data-view#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/packages/no-data-view#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "packages/no-data-view"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
@@ -31,9 +31,9 @@
     },
     "devDependencies": {
         "@types/node": "^22.2.0",
-        "@yume-chan/eslint-config": "workspace:^1.0.0",
-        "@yume-chan/test-runner": "workspace:^1.0.0",
-        "@yume-chan/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^1.0.0",
+        "@gasol/test-runner": "workspace:^1.0.0",
+        "@gasol/tsconfig": "workspace:^1.0.0",
         "prettier": "^3.3.3",
         "tinybench": "^2.9.0",
         "typescript": "^5.5.4"

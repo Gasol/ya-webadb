@@ -1,6 +1,6 @@
 import { PromiseResolver } from "@yume-chan/async";
-import { AbortController } from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+import { AbortController } from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 import type {
     AdbIncomingSocketHandler,

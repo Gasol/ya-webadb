@@ -3,15 +3,15 @@ import type {
     PushReadableStreamController,
     ReadableStream,
     WritableStreamDefaultWriter,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     MaybeConsumable,
     PushReadableStream,
     StructDeserializeStream,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import type { StructValueType } from "@yume-chan/struct";
-import Struct, { placeholder } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { StructValueType } from "@gasol/struct";
+import Struct, { placeholder } from "@gasol/struct";
 
 import type { Adb, AdbSocket } from "../../../adb.js";
 import { AdbFeature } from "../../../features.js";

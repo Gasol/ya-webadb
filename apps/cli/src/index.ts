@@ -4,9 +4,9 @@
 
 import "source-map-support/register.js";
 
-import { Adb, AdbServerClient } from "@yume-chan/adb";
-import { AdbServerNodeTcpConnector } from "@yume-chan/adb-server-node-tcp";
-import { WritableStream } from "@yume-chan/stream-extra";
+import { Adb, AdbServerClient } from "@gasol/adb";
+import { AdbServerNodeTcpConnector } from "@gasol/adb-server-node-tcp";
+import { WritableStream } from "@gasol/stream-extra";
 import { program } from "commander";
 
 program
@@ -29,7 +29,7 @@ program
     });
 
 function createClient() {
-    const opts: { H: string; P: number } = program.opts();
+    const opts: { H: string; P: number; } = program.opts();
     const connection = new AdbServerNodeTcpConnector({
         host: opts.H,
         port: opts.P,
@@ -43,7 +43,7 @@ program
     .usage("[-l]")
     .description("list connected devices (-l for long output)")
     .option("-l", "long output", false)
-    .action(async (options: { l: boolean }) => {
+    .action(async (options: { l: boolean; }) => {
         function appendTransportInfo(key: string, value: string | undefined) {
             if (value) {
                 return ` ${key}:${value}`;
@@ -57,16 +57,11 @@ program
             if (options.l) {
                 console.log(
                     // prettier-ignore
-                    `${
-                        device.serial.padEnd(22)
-                    }device${
-                        appendTransportInfo("product", device.product)
-                    }${
-                        appendTransportInfo("model", device.model)
-                    }${
-                        appendTransportInfo("device", device.device)
-                    }${
-                        appendTransportInfo("transport_id", device.transportId.toString())
+                    `${device.serial.padEnd(22)
+                    }device${appendTransportInfo("product", device.product)
+                    }${appendTransportInfo("model", device.model)
+                    }${appendTransportInfo("device", device.device)
+                    }${appendTransportInfo("transport_id", device.transportId.toString())
                     }`,
                 );
             } else {
@@ -105,21 +100,21 @@ async function createAdb(options: DeviceCommandOptions) {
     const transport = await client.createTransport(
         options.d
             ? {
-                  usb: true,
-              }
+                usb: true,
+            }
             : options.e
-              ? {
+                ? {
                     tcp: true,
                 }
-              : options.s !== undefined
-                ? {
-                      serial: options.s,
-                  }
-                : options.t !== undefined
-                  ? {
-                        transportId: options.t,
+                : options.s !== undefined
+                    ? {
+                        serial: options.s,
                     }
-                  : undefined,
+                    : options.t !== undefined
+                        ? {
+                            transportId: options.t,
+                        }
+                        : undefined,
     );
     const adb = new Adb(transport);
     return adb;

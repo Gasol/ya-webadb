@@ -1,5 +1,5 @@
-import { AutoDisposable } from "@yume-chan/event";
-import type { MaybeConsumable, ReadableStream } from "@yume-chan/stream-extra";
+import { AutoDisposable } from "@gasol/event";
+import type { MaybeConsumable, ReadableStream } from "@gasol/stream-extra";
 
 import type { Adb, AdbSocket } from "../../adb.js";
 import { AdbFeature } from "../../features.js";

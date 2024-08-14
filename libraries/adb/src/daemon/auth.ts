@@ -1,7 +1,7 @@
 import { PromiseResolver } from "@yume-chan/async";
-import type { Disposable } from "@yume-chan/event";
-import type { ValueOrPromise } from "@yume-chan/struct";
-import { EMPTY_UINT8_ARRAY } from "@yume-chan/struct";
+import type { Disposable } from "@gasol/event";
+import type { ValueOrPromise } from "@gasol/struct";
+import { EMPTY_UINT8_ARRAY } from "@gasol/struct";
 
 import {
     calculateBase64EncodedLength,
@@ -67,7 +67,7 @@ export interface AdbAuthenticator {
     ): AsyncIterable<AdbPacketData>;
 }
 
-export const AdbSignatureAuthenticator: AdbAuthenticator = async function* (
+export const AdbSignatureAuthenticator: AdbAuthenticator = async function*(
     credentialStore: AdbCredentialStore,
     getNextRequest: () => Promise<AdbPacketData>,
 ): AsyncIterable<AdbPacketData> {
@@ -88,7 +88,7 @@ export const AdbSignatureAuthenticator: AdbAuthenticator = async function* (
     }
 };
 
-export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function* (
+export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function*(
     credentialStore: AdbCredentialStore,
     getNextRequest: () => Promise<AdbPacketData>,
 ): AsyncIterable<AdbPacketData> {
@@ -117,8 +117,8 @@ export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function* (
         : EMPTY_UINT8_ARRAY;
     const publicKeyBuffer = new Uint8Array(
         publicKeyBase64Length +
-            (nameBuffer.length ? nameBuffer.length + 1 : 0) + // Space character + name
-            1, // Null character
+        (nameBuffer.length ? nameBuffer.length + 1 : 0) + // Space character + name
+        1, // Null character
     );
 
     adbGeneratePublicKey(privateKey.buffer, publicKeyBuffer);

@@ -3,14 +3,14 @@
 // cspell:ignore apks
 // cspell:ignore versioncode
 
-import type { Adb } from "@yume-chan/adb";
-import { AdbCommandBase, escapeArg } from "@yume-chan/adb";
-import type { MaybeConsumable, ReadableStream } from "@yume-chan/stream-extra";
+import type { Adb } from "@gasol/adb";
+import { AdbCommandBase, escapeArg } from "@gasol/adb";
+import type { MaybeConsumable, ReadableStream } from "@gasol/stream-extra";
 import {
     ConcatStringStream,
     SplitStringStream,
     TextDecoderStream,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 
 import { Cmd } from "./cmd.js";
 import type { IntentBuilder } from "./intent.js";

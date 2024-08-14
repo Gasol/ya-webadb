@@ -1,5 +1,5 @@
-import type { ScrcpyMediaStreamPacket } from "@yume-chan/scrcpy";
-import { Av1 } from "@yume-chan/scrcpy";
+import type { ScrcpyMediaStreamPacket } from "@gasol/scrcpy";
+import { Av1 } from "@gasol/scrcpy";
 
 import type { CodecDecoder } from "./type.js";
 import { decimalTwoDigits } from "./utils.js";
@@ -66,12 +66,12 @@ export class Av1Codec implements CodecDecoder {
             "av01",
             seqProfile.toString(16),
             decimalTwoDigits(seqLevelIdx) +
-                (sequenceHeader.seq_tier[0] ? "H" : "M"),
+            (sequenceHeader.seq_tier[0] ? "H" : "M"),
             decimalTwoDigits(BitDepth),
             monoChrome ? "1" : "0",
             (subsamplingX ? "1" : "0") +
-                (subsamplingY ? "1" : "0") +
-                chromaSamplePosition.toString(),
+            (subsamplingY ? "1" : "0") +
+            chromaSamplePosition.toString(),
             decimalTwoDigits(colorPrimaries),
             decimalTwoDigits(transferCharacteristics),
             decimalTwoDigits(matrixCoefficients),

@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/test-runner",
+    "name": "@gasol/test-runner",
     "version": "1.0.0",
     "type": "module",
     "bin": {

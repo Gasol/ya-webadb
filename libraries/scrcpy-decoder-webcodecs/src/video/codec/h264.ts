@@ -1,4 +1,4 @@
-import { h264ParseConfiguration } from "@yume-chan/scrcpy";
+import { h264ParseConfiguration } from "@gasol/scrcpy";
 
 import { H26xDecoder } from "./h26x.js";
 import { hexTwoDigits } from "./utils.js";

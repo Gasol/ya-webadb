@@ -1,4 +1,4 @@
-import { AutoDisposable } from "@yume-chan/event";
+import { AutoDisposable } from "@gasol/event";
 
 import type { Adb } from "../adb.js";
 

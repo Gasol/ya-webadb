@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/fetch-scrcpy-server",
+    "name": "@gasol/fetch-scrcpy-server",
     "version": "0.0.24",
     "description": "A script to download Scrcpy server binary.",
     "keywords": [
@@ -11,14 +11,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/packages/fetch-scrcpy-server#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/packages/fetch-scrcpy-server#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "packages/fetch-scrcpy-server"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "bin": {
         "fetch-scrcpy-server": "bin/fetch-server.js"

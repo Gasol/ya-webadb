@@ -1,4 +1,4 @@
-import { TransformStream } from "@yume-chan/stream-extra";
+import { TransformStream } from "@gasol/stream-extra";
 
 import { ScrcpyOptions1_21 } from "./1_21.js";
 import type { ScrcpyOptionsInit1_22 } from "./1_22/index.js";

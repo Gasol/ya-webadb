@@ -1,5 +1,5 @@
-import { getUint32LittleEndian } from "@yume-chan/no-data-view";
-import { h265ParseConfiguration } from "@yume-chan/scrcpy";
+import { getUint32LittleEndian } from "@gasol/no-data-view";
+import { h265ParseConfiguration } from "@gasol/scrcpy";
 
 import { H26xDecoder } from "./h26x.js";
 import { hexDigits } from "./utils.js";
@@ -34,7 +34,7 @@ export class H265Decoder extends H26xDecoder {
         const codec = [
             "hev1",
             ["", "A", "B", "C"][generalProfileSpace]! +
-                generalProfileIndex.toString(),
+            generalProfileIndex.toString(),
             hexDigits(getUint32LittleEndian(generalProfileCompatibilitySet, 0)),
             (generalTierFlag ? "H" : "L") + generalLevelIndex.toString(),
             ...Array.from(generalConstraintSet, hexDigits),

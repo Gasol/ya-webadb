@@ -1,7 +1,7 @@
 import * as assert from "node:assert";
 import { describe, it } from "node:test";
 
-import { ReadableStream, WritableStream } from "@yume-chan/stream-extra";
+import { ReadableStream, WritableStream } from "@gasol/stream-extra";
 
 import { AdbSyncSocket } from "./socket.js";
 
@@ -13,7 +13,7 @@ describe("AdbSyncSocket", () => {
             const socket = new AdbSyncSocket(
                 {
                     service: "",
-                    close() {},
+                    close() { },
                     closed: Promise.resolve(),
                     readable: new ReadableStream(),
                     writable: new WritableStream(),

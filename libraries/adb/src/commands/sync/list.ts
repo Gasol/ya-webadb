@@ -1,4 +1,4 @@
-import Struct from "@yume-chan/struct";
+import Struct from "@gasol/struct";
 
 import { AdbSyncRequestId, adbSyncWriteRequest } from "./request.js";
 import { AdbSyncResponseId, adbSyncReadResponses } from "./response.js";

@@ -1,6 +1,6 @@
-import type { Adb } from "@yume-chan/adb";
-import { AdbCommandBase } from "@yume-chan/adb";
-import { ConcatStringStream, TextDecoderStream } from "@yume-chan/stream-extra";
+import type { Adb } from "@gasol/adb";
+import { AdbCommandBase } from "@gasol/adb";
+import { ConcatStringStream, TextDecoderStream } from "@gasol/stream-extra";
 
 import { Cmd } from "./cmd.js";
 import type { IntentBuilder } from "./intent.js";

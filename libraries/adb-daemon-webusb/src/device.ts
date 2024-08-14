@@ -2,25 +2,25 @@ import type {
     AdbDaemonDevice,
     AdbPacketData,
     AdbPacketInit,
-} from "@yume-chan/adb";
+} from "@gasol/adb";
 import {
     AdbPacketHeader,
     AdbPacketSerializeStream,
     unreachable,
-} from "@yume-chan/adb";
+} from "@gasol/adb";
 import type {
     Consumable,
     ReadableWritablePair,
     WritableStream,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     DuplexStreamFactory,
     MaybeConsumable,
     ReadableStream,
     pipeFrom,
-} from "@yume-chan/stream-extra";
-import type { ExactReadable } from "@yume-chan/struct";
-import { EMPTY_UINT8_ARRAY } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ExactReadable } from "@gasol/struct";
+import { EMPTY_UINT8_ARRAY } from "@gasol/struct";
 
 import type { UsbInterfaceFilter } from "./utils.js";
 import {
@@ -83,8 +83,7 @@ class Uint8ArrayExactReadable implements ExactReadable {
 }
 
 export class AdbDaemonWebUsbConnection
-    implements ReadableWritablePair<AdbPacketData, Consumable<AdbPacketInit>>
-{
+    implements ReadableWritablePair<AdbPacketData, Consumable<AdbPacketInit>> {
     #device: AdbDaemonWebUsbDevice;
     get device() {
         return this.#device;
@@ -221,7 +220,7 @@ export class AdbDaemonWebUsbConnection
                 // Add `payload` field to its type, it's assigned below.
                 const packet = AdbPacketHeader.deserialize(
                     stream,
-                ) as AdbPacketHeader & { payload: Uint8Array };
+                ) as AdbPacketHeader & { payload: Uint8Array; };
 
                 if (packet.magic !== (packet.command ^ 0xffffffff)) {
                     continue;

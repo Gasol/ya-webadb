@@ -6,17 +6,17 @@ import {
 import {
     getUint32LittleEndian,
     setUint32LittleEndian,
-} from "@yume-chan/no-data-view";
+} from "@gasol/no-data-view";
 import type {
     ReadableWritablePair,
     WritableStreamDefaultWriter,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     AbortController,
     Consumable,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import { EMPTY_UINT8_ARRAY, decodeUtf8, encodeUtf8 } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import { EMPTY_UINT8_ARRAY, decodeUtf8, encodeUtf8 } from "@gasol/struct";
 
 import type { AdbIncomingSocketHandler, AdbSocket, Closeable } from "../adb.js";
 

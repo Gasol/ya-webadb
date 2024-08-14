@@ -1,9 +1,9 @@
 import type {
     MaybeConsumable,
     ReadableWritablePair,
-} from "@yume-chan/stream-extra";
-import { ConcatStringStream, TextDecoderStream } from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import { ConcatStringStream, TextDecoderStream } from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 import type { AdbBanner } from "./banner.js";
 import type { AdbFrameBuffer } from "./commands/index.js";
@@ -24,7 +24,7 @@ export interface Closeable {
 
 export interface AdbSocket
     extends ReadableWritablePair<Uint8Array, MaybeConsumable<Uint8Array>>,
-        Closeable {
+    Closeable {
     get service(): string;
 
     get closed(): Promise<void>;
@@ -126,7 +126,7 @@ export class Adb implements Closeable {
 
     async rm(
         filenames: string | string[],
-        options?: { recursive?: boolean; force?: boolean },
+        options?: { recursive?: boolean; force?: boolean; },
     ): Promise<string> {
         const args = ["rm"];
         if (options?.recursive) {

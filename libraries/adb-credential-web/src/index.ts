@@ -1,6 +1,6 @@
 // cspell: ignore RSASSA
 
-import type { AdbCredentialStore, AdbPrivateKey } from "@yume-chan/adb";
+import type { AdbCredentialStore, AdbPrivateKey } from "@gasol/adb";
 
 function openDatabase() {
     return new Promise<IDBDatabase>((resolve, reject) => {

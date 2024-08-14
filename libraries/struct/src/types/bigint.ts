@@ -3,7 +3,7 @@ import {
     getUint64,
     setInt64,
     setUint64,
-} from "@yume-chan/no-data-view";
+} from "@gasol/no-data-view";
 
 import type {
     AsyncExactReadable,

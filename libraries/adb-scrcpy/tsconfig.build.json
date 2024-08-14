@@ -1,5 +1,5 @@
 {
-    "extends": "./node_modules/@yume-chan/tsconfig/tsconfig.base.json",
+    "extends": "./node_modules/@gasol/tsconfig/tsconfig.base.json",
     "references": [
         {
             "path": "../adb/tsconfig.build.json"

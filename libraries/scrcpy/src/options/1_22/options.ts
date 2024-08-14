@@ -1,5 +1,5 @@
-import type { ReadableStream } from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+import type { ReadableStream } from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 import type { ScrcpyScrollController } from "../1_16/index.js";
 import { ScrcpyOptions1_21 } from "../1_21.js";

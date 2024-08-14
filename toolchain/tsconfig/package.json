@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/tsconfig",
+    "name": "@gasol/tsconfig",
     "version": "1.0.0",
     "private": true,
     "devDependencies": {

@@ -1,5 +1,5 @@
-import { BufferedReadableStream } from "@yume-chan/stream-extra";
-import Struct, { StructEmptyError } from "@yume-chan/struct";
+import { BufferedReadableStream } from "@gasol/stream-extra";
+import Struct, { StructEmptyError } from "@gasol/struct";
 
 import type { Adb } from "../adb.js";
 

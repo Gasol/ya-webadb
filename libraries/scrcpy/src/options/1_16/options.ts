@@ -1,19 +1,19 @@
 import {
     getUint16BigEndian,
     getUint32BigEndian,
-} from "@yume-chan/no-data-view";
+} from "@gasol/no-data-view";
 import type {
     PushReadableStreamController,
     ReadableStream,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     BufferedReadableStream,
     PushReadableStream,
     StructDeserializeStream,
     TransformStream,
-} from "@yume-chan/stream-extra";
-import type { AsyncExactReadable, ValueOrPromise } from "@yume-chan/struct";
-import { decodeUtf8 } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { AsyncExactReadable, ValueOrPromise } from "@gasol/struct";
+import { decodeUtf8 } from "@gasol/struct";
 
 import type {
     ScrcpyBackOrScreenOnControlMessage,

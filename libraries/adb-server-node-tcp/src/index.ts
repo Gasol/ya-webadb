@@ -1,15 +1,15 @@
 import type { AddressInfo, SocketConnectOpts } from "net";
 import { Server, Socket } from "net";
 
-import type { AdbIncomingSocketHandler, AdbServerClient } from "@yume-chan/adb";
+import type { AdbIncomingSocketHandler, AdbServerClient } from "@gasol/adb";
 import {
     MaybeConsumable,
     PushReadableStream,
     tryClose,
     WrapWritableStream,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 function nodeSocketToConnection(
     socket: Socket,
@@ -59,8 +59,7 @@ function nodeSocketToConnection(
 }
 
 export class AdbServerNodeTcpConnector
-    implements AdbServerClient.ServerConnector
-{
+    implements AdbServerClient.ServerConnector {
     readonly spec: SocketConnectOpts;
 
     readonly #listeners = new Map<string, Server>();

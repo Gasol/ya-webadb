@@ -1,5 +1,5 @@
-import type { MaybeConsumable, WritableStream } from "@yume-chan/stream-extra";
-import { ReadableStream } from "@yume-chan/stream-extra";
+import type { MaybeConsumable, WritableStream } from "@gasol/stream-extra";
+import { ReadableStream } from "@gasol/stream-extra";
 
 import type { Adb, AdbSocket } from "../../../adb.js";
 import { unreachable } from "../../../utils/index.js";

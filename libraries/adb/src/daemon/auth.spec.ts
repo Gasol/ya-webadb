@@ -1,7 +1,7 @@
 import * as assert from "node:assert";
 import { describe, it } from "node:test";
 
-import { EMPTY_UINT8_ARRAY, encodeUtf8 } from "@yume-chan/struct";
+import { EMPTY_UINT8_ARRAY, encodeUtf8 } from "@gasol/struct";
 
 import { decodeBase64 } from "../utils/base64.js";
 

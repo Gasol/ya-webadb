@@ -1,5 +1,5 @@
-import { Consumable, TransformStream } from "@yume-chan/stream-extra";
-import Struct from "@yume-chan/struct";
+import { Consumable, TransformStream } from "@gasol/stream-extra";
+import Struct from "@gasol/struct";
 
 export enum AdbCommand {
     Auth = 0x48545541, // 'AUTH'

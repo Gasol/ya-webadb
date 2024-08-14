@@ -1,4 +1,4 @@
-import type { ReadableStream } from "@yume-chan/stream-extra";
+import type { ReadableStream } from "@gasol/stream-extra";
 
 import type { ScrcpyOptionValue } from "./types.js";
 

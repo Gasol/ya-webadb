@@ -2,7 +2,7 @@ import assert from "node:assert";
 import { describe, it, mock } from "node:test";
 
 import { PromiseResolver } from "@yume-chan/async";
-import { ReadableStream, WritableStream } from "@yume-chan/stream-extra";
+import { ReadableStream, WritableStream } from "@gasol/stream-extra";
 
 import type { AdbSocket } from "../../../adb.js";
 
@@ -14,7 +14,7 @@ describe("AdbSubprocessNoneProtocol", () => {
             const closed = new PromiseResolver<void>();
             const socket: AdbSocket = {
                 service: "",
-                close: mock.fn(() => {}),
+                close: mock.fn(() => { }),
                 closed: closed.promise,
                 readable: new ReadableStream({
                     async start(controller) {
@@ -44,7 +44,7 @@ describe("AdbSubprocessNoneProtocol", () => {
             const closed = new PromiseResolver<void>();
             const socket: AdbSocket = {
                 service: "",
-                close: mock.fn(() => {}),
+                close: mock.fn(() => { }),
                 closed: closed.promise,
                 readable: new ReadableStream({
                     async start(controller) {
@@ -83,7 +83,7 @@ describe("AdbSubprocessNoneProtocol", () => {
             const closed = new PromiseResolver<void>();
             const socket: AdbSocket = {
                 service: "",
-                close: mock.fn(() => {}),
+                close: mock.fn(() => { }),
                 closed: closed.promise,
                 readable: new ReadableStream({
                     async start(controller) {
@@ -113,7 +113,7 @@ describe("AdbSubprocessNoneProtocol", () => {
             const closed = new PromiseResolver<void>();
             const socket: AdbSocket = {
                 service: "",
-                close: mock.fn(() => {}),
+                close: mock.fn(() => { }),
                 closed: closed.promise,
                 readable: new ReadableStream(),
                 writable: new WritableStream(),
@@ -130,7 +130,7 @@ describe("AdbSubprocessNoneProtocol", () => {
     it("`resize` shouldn't throw any error", () => {
         const socket: AdbSocket = {
             service: "",
-            close: mock.fn(() => {}),
+            close: mock.fn(() => { }),
             closed: new PromiseResolver<void>().promise,
             readable: new ReadableStream(),
             writable: new WritableStream(),
@@ -141,7 +141,7 @@ describe("AdbSubprocessNoneProtocol", () => {
     });
 
     it("`kill` should close `socket`", async () => {
-        const close = mock.fn(() => {});
+        const close = mock.fn(() => { });
         const socket: AdbSocket = {
             service: "",
             close,

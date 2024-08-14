@@ -1,5 +1,5 @@
-import type { Consumable, ReadableWritablePair } from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+import type { Consumable, ReadableWritablePair } from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 import type { AdbPacketData, AdbPacketInit } from "./packet.js";
 

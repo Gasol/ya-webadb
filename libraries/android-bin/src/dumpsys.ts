@@ -1,4 +1,4 @@
-import { AdbCommandBase } from "@yume-chan/adb";
+import { AdbCommandBase } from "@gasol/adb";
 
 const BatteryDumpFields: Record<
     string,

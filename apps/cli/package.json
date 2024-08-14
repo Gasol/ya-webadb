@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/adb-cli",
+    "name": "@gasol/adb-cli",
     "private": true,
     "version": "0.0.19",
     "description": "Re-implement `adb`",
@@ -13,14 +13,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/apps/adb-cli#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/apps/adb-cli#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "apps/adb-cli"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
@@ -33,17 +33,17 @@
         "tango-cli": "esm/index.js"
     },
     "dependencies": {
-        "@yume-chan/adb": "workspace:^0.0.24",
-        "@yume-chan/adb-server-node-tcp": "workspace:^0.0.24",
-        "@yume-chan/android-bin": "workspace:^0.0.24",
-        "@yume-chan/stream-extra": "workspace:^0.0.24",
+        "@gasol/adb": "workspace:^0.0.24",
+        "@gasol/adb-server-node-tcp": "workspace:^0.0.24",
+        "@gasol/android-bin": "workspace:^0.0.24",
+        "@gasol/stream-extra": "workspace:^0.0.24",
         "commander": "^12.1.0",
         "source-map-support": "^0.5.21"
     },
     "devDependencies": {
         "@types/node": "^22.2.0",
-        "@yume-chan/eslint-config": "workspace:^1.0.0",
-        "@yume-chan/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^1.0.0",
+        "@gasol/tsconfig": "workspace:^1.0.0",
         "prettier": "^3.3.3",
         "typescript": "^5.5.4"
     }

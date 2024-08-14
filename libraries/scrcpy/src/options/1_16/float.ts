@@ -1,6 +1,6 @@
-import { getUint16, setUint16 } from "@yume-chan/no-data-view";
-import type { NumberFieldVariant } from "@yume-chan/struct";
-import { NumberFieldDefinition } from "@yume-chan/struct";
+import { getUint16, setUint16 } from "@gasol/no-data-view";
+import type { NumberFieldVariant } from "@gasol/struct";
+import { NumberFieldDefinition } from "@gasol/struct";
 
 export function clamp(value: number, min: number, max: number): number {
     if (value < min) {

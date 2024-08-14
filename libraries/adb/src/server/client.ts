@@ -1,26 +1,26 @@
 // cspell:ignore tport
 
 import { PromiseResolver } from "@yume-chan/async";
-import { getUint64LittleEndian } from "@yume-chan/no-data-view";
+import { getUint64LittleEndian } from "@gasol/no-data-view";
 import type {
     AbortSignal,
     ReadableWritablePair,
     WritableStreamDefaultWriter,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     BufferedReadableStream,
     MaybeConsumable,
     WrapWritableStream,
     tryCancel,
     tryClose,
-} from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 import {
     EMPTY_UINT8_ARRAY,
     SyncPromise,
     decodeUtf8,
     encodeUtf8,
-} from "@yume-chan/struct";
+} from "@gasol/struct";
 
 import type { AdbIncomingSocketHandler, AdbSocket, Closeable } from "../adb.js";
 import { AdbBanner } from "../banner.js";
@@ -346,7 +346,7 @@ export class AdbServerClient {
      */
     async getDeviceFeatures(
         device: AdbServerClient.DeviceSelector,
-    ): Promise<{ transportId: bigint; features: AdbFeature[] }> {
+    ): Promise<{ transportId: bigint; features: AdbFeature[]; }> {
         // On paper, `host:features` is a host service (device features are cached in host),
         // so it shouldn't use `createDeviceConnection`,
         // which is used to forward the service to the device.
@@ -556,7 +556,7 @@ export namespace AdbServerClient {
 
     export interface ServerConnection
         extends ReadableWritablePair<Uint8Array, Uint8Array>,
-            Closeable {
+        Closeable {
         get closed(): Promise<void>;
     }
 
@@ -580,10 +580,10 @@ export namespace AdbServerClient {
     }
 
     export type DeviceSelector =
-        | { transportId: bigint }
-        | { serial: string }
-        | { usb: true }
-        | { tcp: true }
+        | { transportId: bigint; }
+        | { serial: string; }
+        | { usb: true; }
+        | { tcp: true; }
         | undefined;
 
     export interface Device {

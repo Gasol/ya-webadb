@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/scrcpy",
+    "name": "@gasol/scrcpy",
     "version": "0.0.24",
     "description": "TypeScript implementation of Scrcpy client.",
     "keywords": [
@@ -13,14 +13,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/packages/scrcpy#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/packages/scrcpy#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "packages/scrcpy"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
@@ -34,15 +34,15 @@
     },
     "dependencies": {
         "@yume-chan/async": "^2.2.0",
-        "@yume-chan/no-data-view": "workspace:^0.0.24",
-        "@yume-chan/stream-extra": "workspace:^0.0.24",
-        "@yume-chan/struct": "workspace:^0.0.24"
+        "@gasol/no-data-view": "workspace:^0.0.24",
+        "@gasol/stream-extra": "workspace:^0.0.24",
+        "@gasol/struct": "workspace:^0.0.24"
     },
     "devDependencies": {
         "@types/node": "^22.2.0",
-        "@yume-chan/eslint-config": "workspace:^1.0.0",
-        "@yume-chan/test-runner": "workspace:^1.0.0",
-        "@yume-chan/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^1.0.0",
+        "@gasol/test-runner": "workspace:^1.0.0",
+        "@gasol/tsconfig": "workspace:^1.0.0",
         "prettier": "^3.3.3",
         "typescript": "^5.5.4"
     }

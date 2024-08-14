@@ -1,12 +1,12 @@
 import { PromiseResolver } from "@yume-chan/async";
-import type { ReadableWritablePair } from "@yume-chan/stream-extra";
+import type { ReadableWritablePair } from "@gasol/stream-extra";
 import {
     AbortController,
     Consumable,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
-import { decodeUtf8, encodeUtf8 } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
+import { decodeUtf8, encodeUtf8 } from "@gasol/struct";
 
 import type {
     AdbIncomingSocketHandler,

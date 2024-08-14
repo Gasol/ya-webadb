@@ -1,8 +1,8 @@
 // cspell: ignore killforward
 
-import { AutoDisposable } from "@yume-chan/event";
-import { BufferedReadableStream } from "@yume-chan/stream-extra";
-import Struct, { ExactReadableEndedError, encodeUtf8 } from "@yume-chan/struct";
+import { AutoDisposable } from "@gasol/event";
+import { BufferedReadableStream } from "@gasol/stream-extra";
+import Struct, { ExactReadableEndedError, encodeUtf8 } from "@gasol/struct";
 
 import type { Adb, AdbIncomingSocketHandler } from "../adb.js";
 import { hexToNumber, sequenceEqual } from "../utils/index.js";

@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/eslint-config",
+    "name": "@gasol/eslint-config",
     "version": "1.0.0",
     "private": true,
     "type": "module",

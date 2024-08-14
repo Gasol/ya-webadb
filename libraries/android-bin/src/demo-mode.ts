@@ -4,8 +4,8 @@
 // cspell: ignore systemui
 // cspell: ignore sysui
 
-import type { Adb } from "@yume-chan/adb";
-import { AdbCommandBase } from "@yume-chan/adb";
+import type { Adb } from "@gasol/adb";
+import { AdbCommandBase } from "@gasol/adb";
 
 import { Settings } from "./settings.js";
 
@@ -122,10 +122,10 @@ export class DemoMode extends AdbCommandBase {
             command,
             ...(extra
                 ? Object.entries(extra).flatMap(([key, value]) => [
-                      "-e",
-                      key,
-                      value,
-                  ])
+                    "-e",
+                    key,
+                    value,
+                ])
                 : []),
         ]);
     }

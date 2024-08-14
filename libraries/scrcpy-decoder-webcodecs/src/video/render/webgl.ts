@@ -1,4 +1,4 @@
-import { createCanvas } from "@yume-chan/scrcpy-decoder-tinyh264";
+import { createCanvas } from "@gasol/scrcpy-decoder-tinyh264";
 
 import { CanvasWebCodecsVideoDecoderRenderer } from "./canvas.js";
 

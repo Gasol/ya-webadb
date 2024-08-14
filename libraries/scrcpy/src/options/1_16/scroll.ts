@@ -1,4 +1,4 @@
-import Struct from "@yume-chan/struct";
+import Struct from "@gasol/struct";
 
 import type { ScrcpyInjectScrollControlMessage } from "../../control/index.js";
 

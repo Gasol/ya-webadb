@@ -2,7 +2,7 @@ import {
     getUint64BigEndian,
     setInt64BigEndian,
     setInt64LittleEndian,
-} from "@yume-chan/no-data-view";
+} from "@gasol/no-data-view";
 
 /**
  * Gets the `BigInt` value at the specified byte offset and length from the start of the view. There is

@@ -1,4 +1,4 @@
-import Struct, { placeholder } from "@yume-chan/struct";
+import Struct, { placeholder } from "@gasol/struct";
 
 import { AdbSyncRequestId, adbSyncWriteRequest } from "./request.js";
 import { AdbSyncResponseId, adbSyncReadResponse } from "./response.js";

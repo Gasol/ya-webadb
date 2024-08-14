@@ -3,14 +3,14 @@ import type {
     AdbSubprocessProtocol,
     AdbSubprocessProtocolConstructor,
     AdbSubprocessWaitResult,
-} from "@yume-chan/adb";
+} from "@gasol/adb";
 import {
     AdbCommandBase,
     AdbFeature,
     AdbSubprocessNoneProtocol,
     AdbSubprocessShellProtocol,
-} from "@yume-chan/adb";
-import { ConcatStringStream, TextDecoderStream } from "@yume-chan/stream-extra";
+} from "@gasol/adb";
+import { ConcatStringStream, TextDecoderStream } from "@gasol/stream-extra";
 
 export class Cmd extends AdbCommandBase {
     #supportsShellV2: boolean;

@@ -1,17 +1,17 @@
 // cspell: ignore logcat
 // cspell: ignore usec
 
-import { AdbCommandBase, AdbSubprocessNoneProtocol } from "@yume-chan/adb";
-import type { ReadableStream } from "@yume-chan/stream-extra";
+import { AdbCommandBase, AdbSubprocessNoneProtocol } from "@gasol/adb";
+import type { ReadableStream } from "@gasol/stream-extra";
 import {
     BufferedTransformStream,
     SplitStringStream,
     TextDecoderStream,
     WrapReadableStream,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import type { AsyncExactReadable } from "@yume-chan/struct";
-import Struct, { decodeUtf8 } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { AsyncExactReadable } from "@gasol/struct";
+import Struct, { decodeUtf8 } from "@gasol/struct";
 
 // `adb logcat` is an alias to `adb shell logcat`
 // so instead of adding to core library, it's implemented here
@@ -44,17 +44,17 @@ export enum AndroidLogPriority {
 
 // https://cs.android.com/android/platform/superproject/+/master:system/logging/liblog/logprint.cpp;l=140;drc=8dbf3b2bb6b6d1652d9797e477b9abd03278bb79
 export const AndroidLogPriorityToCharacter: Record<AndroidLogPriority, string> =
-    {
-        [AndroidLogPriority.Unknown]: "?",
-        [AndroidLogPriority.Default]: "?",
-        [AndroidLogPriority.Verbose]: "V",
-        [AndroidLogPriority.Debug]: "D",
-        [AndroidLogPriority.Info]: "I",
-        [AndroidLogPriority.Warn]: "W",
-        [AndroidLogPriority.Error]: "E",
-        [AndroidLogPriority.Fatal]: "F",
-        [AndroidLogPriority.Silent]: "S",
-    };
+{
+    [AndroidLogPriority.Unknown]: "?",
+    [AndroidLogPriority.Default]: "?",
+    [AndroidLogPriority.Verbose]: "V",
+    [AndroidLogPriority.Debug]: "D",
+    [AndroidLogPriority.Info]: "I",
+    [AndroidLogPriority.Warn]: "W",
+    [AndroidLogPriority.Error]: "E",
+    [AndroidLogPriority.Fatal]: "F",
+    [AndroidLogPriority.Silent]: "S",
+};
 
 export enum LogcatFormat {
     Brief,
@@ -175,13 +175,10 @@ function formatTimezone(seconds: number, modifiers: LogcatFormatModifiers) {
     const minutes = absolute % 60;
 
     // prettier-ignore
-    return ` ${
-        sign
-    }${
-        hours.toString().padStart(2, "0")
-    }:${
-        minutes.toString().padStart(2, "0")
-    }`;
+    return ` ${sign
+        }${hours.toString().padStart(2, "0")
+        }:${minutes.toString().padStart(2, "0")
+        }`;
 }
 
 function formatTime(
@@ -213,73 +210,49 @@ function getFormatPrefix(
         // TODO: implement other formats
         case LogcatFormat.Tag:
             // prettier-ignore
-            return `${
-                AndroidLogPriorityToCharacter[entry.priority]
-            }/${
-                entry.tag.padEnd(8)
-            }: `;
+            return `${AndroidLogPriorityToCharacter[entry.priority]
+                }/${entry.tag.padEnd(8)
+                }: `;
         case LogcatFormat.Process:
             // prettier-ignore
-            return `${
-                AndroidLogPriorityToCharacter[entry.priority]
-            }(${
-                formatUid(entry.uid, modifiers, ":")
-            }${
-                entry.pid.toString().padStart(5)
-            }) `;
+            return `${AndroidLogPriorityToCharacter[entry.priority]
+                }(${formatUid(entry.uid, modifiers, ":")
+                }${entry.pid.toString().padStart(5)
+                }) `;
         case LogcatFormat.Thread:
             // prettier-ignore
-            return `${
-                AndroidLogPriorityToCharacter[entry.priority]
-            }(${
-                formatUid(entry.uid, modifiers, ":")
-            }${
-                entry.pid.toString().padStart(5)
-            }:${
-                entry.tid.toString().padStart(5)
-            }) `;
+            return `${AndroidLogPriorityToCharacter[entry.priority]
+                }(${formatUid(entry.uid, modifiers, ":")
+                }${entry.pid.toString().padStart(5)
+                }:${entry.tid.toString().padStart(5)
+                }) `;
         case LogcatFormat.Raw:
             return "";
         case LogcatFormat.Time:
             // prettier-ignore
-            return `${
-                formatTime(entry.seconds, entry.nanoseconds, modifiers)
-            } ${
-                AndroidLogPriorityToCharacter[entry.priority]
-            }/${
-                entry.tag.padEnd(8)
-            }(${
-                formatUid(entry.uid, modifiers, ":")
-            }${
-                entry.pid.toString().padStart(5)
-            }): `;
+            return `${formatTime(entry.seconds, entry.nanoseconds, modifiers)
+                } ${AndroidLogPriorityToCharacter[entry.priority]
+                }/${entry.tag.padEnd(8)
+                }(${formatUid(entry.uid, modifiers, ":")
+                }${entry.pid.toString().padStart(5)
+                }): `;
         case LogcatFormat.ThreadTime:
             // prettier-ignore
-            return `${
-                formatTime(entry.seconds, entry.nanoseconds, modifiers)
-            } ${
-                formatUid(entry.uid, modifiers, " ")
-            }${
-                entry.pid.toString().padStart(5)
-            } ${
-                entry.tid.toString().padStart(5)
-            } ${
-                AndroidLogPriorityToCharacter[entry.priority]
-            } ${
-                entry.tag.toString().padEnd(8)
-            }: `;
+            return `${formatTime(entry.seconds, entry.nanoseconds, modifiers)
+                } ${formatUid(entry.uid, modifiers, " ")
+                }${entry.pid.toString().padStart(5)
+                } ${entry.tid.toString().padStart(5)
+                } ${AndroidLogPriorityToCharacter[entry.priority]
+                } ${entry.tag.toString().padEnd(8)
+                }: `;
         case LogcatFormat.Brief:
         default:
             // prettier-ignore
-            return `${
-                AndroidLogPriorityToCharacter[entry.priority]
-            }/${
-                entry.tag.padEnd(8)
-            }(${
-                formatUid(entry.uid, modifiers, ":")
-            }${
-                entry.pid.toString().padStart(5)
-            }): `;
+            return `${AndroidLogPriorityToCharacter[entry.priority]
+                }/${entry.tag.padEnd(8)
+                }(${formatUid(entry.uid, modifiers, ":")
+                }${entry.pid.toString().padStart(5)
+                }): `;
     }
 }
 
@@ -312,21 +285,14 @@ function AndroidLogEntryToString(
     switch (format) {
         case LogcatFormat.Long:
             // prettier-ignore
-            return `[ ${
-                formatTime(this.seconds, this.nanoseconds, modifiers)
-            } ${
-                formatUid(this.uid, modifiers, ":")
-            }${
-                this.pid.toString().padStart(5)
-            }:${
-                this.tid.toString().padStart(5)
-            } ${
-                AndroidLogPriorityToCharacter[this.priority]
-            }/${
-                this.tag.padEnd(8)
-            } ]\n${
-                this.message
-            }\n`;
+            return `[ ${formatTime(this.seconds, this.nanoseconds, modifiers)
+                } ${formatUid(this.uid, modifiers, ":")
+                }${this.pid.toString().padStart(5)
+                }:${this.tid.toString().padStart(5)
+                } ${AndroidLogPriorityToCharacter[this.priority]
+                }/${this.tag.padEnd(8)
+                } ]\n${this.message
+                }\n`;
         default:
             return formatEntryWrapLine(this, format, modifiers);
     }

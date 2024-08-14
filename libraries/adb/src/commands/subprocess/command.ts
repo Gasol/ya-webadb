@@ -1,4 +1,4 @@
-import { ConcatStringStream, TextDecoderStream } from "@yume-chan/stream-extra";
+import { ConcatStringStream, TextDecoderStream } from "@gasol/stream-extra";
 
 import { AdbCommandBase } from "../base.js";
 

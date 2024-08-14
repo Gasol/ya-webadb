@@ -1,12 +1,12 @@
 import { PromiseResolver } from "@yume-chan/async";
-import { EventEmitter } from "@yume-chan/event";
-import type { ScrcpyMediaStreamPacket } from "@yume-chan/scrcpy";
+import { EventEmitter } from "@gasol/event";
+import type { ScrcpyMediaStreamPacket } from "@gasol/scrcpy";
 import {
     AndroidAvcLevel,
     AndroidAvcProfile,
     h264ParseConfiguration,
-} from "@yume-chan/scrcpy";
-import { WritableStream } from "@yume-chan/stream-extra";
+} from "@gasol/scrcpy";
+import { WritableStream } from "@gasol/stream-extra";
 import YuvBuffer from "yuv-buffer";
 import YuvCanvas from "yuv-canvas";
 
@@ -54,7 +54,7 @@ export class TinyH264Decoder implements ScrcpyVideoDecoder {
         return this.#renderer;
     }
 
-    #sizeChanged = new EventEmitter<{ width: number; height: number }>();
+    #sizeChanged = new EventEmitter<{ width: number; height: number; }>();
     get sizeChanged() {
         return this.#sizeChanged.event;
     }

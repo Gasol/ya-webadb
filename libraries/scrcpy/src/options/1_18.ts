@@ -1,4 +1,4 @@
-import Struct, { placeholder } from "@yume-chan/struct";
+import Struct, { placeholder } from "@gasol/struct";
 
 import type {
     AndroidKeyEventAction,

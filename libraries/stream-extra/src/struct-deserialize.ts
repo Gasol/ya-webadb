@@ -1,5 +1,5 @@
-import type Struct from "@yume-chan/struct";
-import type { StructValueType } from "@yume-chan/struct";
+import type Struct from "@gasol/struct";
+import type { StructValueType } from "@gasol/struct";
 
 import { BufferedTransformStream } from "./buffered-transform.js";
 

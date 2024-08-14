@@ -1,10 +1,10 @@
-import type { ReadableStream } from "@yume-chan/stream-extra";
+import type { ReadableStream } from "@gasol/stream-extra";
 import {
     AbortController,
     DistributionStream,
     MaybeConsumable,
-} from "@yume-chan/stream-extra";
-import Struct, { placeholder } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import Struct, { placeholder } from "@gasol/struct";
 
 import { NOOP } from "../../utils/index.js";
 

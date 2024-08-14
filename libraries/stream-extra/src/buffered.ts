@@ -1,5 +1,5 @@
-import type { AsyncExactReadable } from "@yume-chan/struct";
-import { ExactReadableEndedError } from "@yume-chan/struct";
+import type { AsyncExactReadable } from "@gasol/struct";
+import { ExactReadableEndedError } from "@gasol/struct";
 
 import { PushReadableStream } from "./push-readable.js";
 import type { ReadableStream, ReadableStreamDefaultReader } from "./stream.js";

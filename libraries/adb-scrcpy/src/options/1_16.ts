@@ -1,10 +1,10 @@
-import type { Adb } from "@yume-chan/adb";
+import type { Adb } from "@gasol/adb";
 import type {
     ScrcpyDisplay,
     ScrcpyEncoder,
     ScrcpyOptionsInit1_16,
-} from "@yume-chan/scrcpy";
-import { WritableStream } from "@yume-chan/stream-extra";
+} from "@gasol/scrcpy";
+import { WritableStream } from "@gasol/stream-extra";
 
 import { AdbScrcpyClient, AdbScrcpyExitedError } from "../client.js";
 import type {

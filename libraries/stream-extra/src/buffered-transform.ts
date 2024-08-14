@@ -1,5 +1,5 @@
-import type { ValueOrPromise } from "@yume-chan/struct";
-import { StructEmptyError } from "@yume-chan/struct";
+import type { ValueOrPromise } from "@gasol/struct";
+import { StructEmptyError } from "@gasol/struct";
 
 import { BufferedReadableStream } from "./buffered.js";
 import type { PushReadableStreamController } from "./push-readable.js";
@@ -9,8 +9,7 @@ import { ReadableStream, WritableStream } from "./stream.js";
 
 // TODO: BufferedTransformStream: find better implementation
 export class BufferedTransformStream<T>
-    implements ReadableWritablePair<T, Uint8Array>
-{
+    implements ReadableWritablePair<T, Uint8Array> {
     #readable: ReadableStream<T>;
     get readable() {
         return this.#readable;

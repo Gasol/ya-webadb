@@ -1,6 +1,6 @@
-import { getInt16, setInt16 } from "@yume-chan/no-data-view";
-import type { NumberFieldVariant } from "@yume-chan/struct";
-import Struct, { NumberFieldDefinition } from "@yume-chan/struct";
+import { getInt16, setInt16 } from "@gasol/no-data-view";
+import type { NumberFieldVariant } from "@gasol/struct";
+import Struct, { NumberFieldDefinition } from "@gasol/struct";
 
 import type { ScrcpyInjectScrollControlMessage } from "../../control/index.js";
 import { ScrcpyControlMessageType } from "../../control/index.js";

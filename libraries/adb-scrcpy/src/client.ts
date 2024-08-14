@@ -1,8 +1,8 @@
-import type { Adb, AdbSubprocessProtocol } from "@yume-chan/adb";
+import type { Adb, AdbSubprocessProtocol } from "@gasol/adb";
 import {
     AdbReverseNotSupportedError,
     AdbSubprocessNoneProtocol,
-} from "@yume-chan/adb";
+} from "@gasol/adb";
 import type {
     ScrcpyAudioStreamDisabledMetadata,
     ScrcpyAudioStreamErroredMetadata,
@@ -11,7 +11,7 @@ import type {
     ScrcpyEncoder,
     ScrcpyMediaStreamPacket,
     ScrcpyVideoStreamMetadata,
-} from "@yume-chan/scrcpy";
+} from "@gasol/scrcpy";
 import {
     Av1,
     DEFAULT_SERVER_PATH,
@@ -19,13 +19,13 @@ import {
     ScrcpyVideoCodecId,
     h264ParseConfiguration,
     h265ParseConfiguration,
-} from "@yume-chan/scrcpy";
+} from "@gasol/scrcpy";
 import type {
     Consumable,
     MaybeConsumable,
     ReadableStream,
     ReadableWritablePair,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     AbortController,
     BufferedReadableStream,
@@ -34,8 +34,8 @@ import {
     SplitStringStream,
     TextDecoderStream,
     WritableStream,
-} from "@yume-chan/stream-extra";
-import { ExactReadableEndedError } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import { ExactReadableEndedError } from "@gasol/struct";
 
 import type { AdbScrcpyConnection } from "./connection.js";
 import type { AdbScrcpyOptions } from "./options/index.js";
@@ -80,8 +80,8 @@ interface AdbScrcpyClientInit {
     videoStream: ReadableStream<Uint8Array> | undefined;
     audioStream: ReadableStream<Uint8Array> | undefined;
     controlStream:
-        | ReadableWritablePair<Uint8Array, Consumable<Uint8Array>>
-        | undefined;
+    | ReadableWritablePair<Uint8Array, Consumable<Uint8Array>>
+    | undefined;
 }
 
 export interface AdbScrcpyVideoStream {
@@ -327,7 +327,7 @@ export class AdbScrcpyClient {
                 options,
             );
 
-            this.#parseDeviceMessages(controlStream.readable).catch(() => {});
+            this.#parseDeviceMessages(controlStream.readable).catch(() => { });
         }
     }
 
@@ -350,7 +350,7 @@ export class AdbScrcpyClient {
             }
         } catch (e) {
             await this.#options.endDeviceMessageStream(e);
-            buffered.cancel(e).catch(() => {});
+            buffered.cancel(e).catch(() => { });
         }
     }
 
@@ -434,8 +434,7 @@ export class AdbScrcpyClient {
                 };
             default:
                 throw new Error(
-                    `Unexpected audio metadata type ${
-                        metadata["type"] as unknown as string
+                    `Unexpected audio metadata type ${metadata["type"] as unknown as string
                     }`,
                 );
         }

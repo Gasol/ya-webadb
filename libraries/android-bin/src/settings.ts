@@ -1,5 +1,5 @@
-import type { Adb, AdbSubprocessWaitResult } from "@yume-chan/adb";
-import { AdbCommandBase } from "@yume-chan/adb";
+import type { Adb, AdbSubprocessWaitResult } from "@gasol/adb";
+import { AdbCommandBase } from "@gasol/adb";
 
 import { Cmd } from "./cmd.js";
 import type { SingleUser } from "./utils.js";

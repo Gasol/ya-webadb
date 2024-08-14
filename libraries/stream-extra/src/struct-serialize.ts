@@ -1,4 +1,4 @@
-import type Struct from "@yume-chan/struct";
+import type Struct from "@gasol/struct";
 
 import { TransformStream } from "./stream.js";
 

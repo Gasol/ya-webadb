@@ -1,4 +1,4 @@
-import type { ScrcpyMediaStreamPacket } from "@yume-chan/scrcpy";
+import type { ScrcpyMediaStreamPacket } from "@gasol/scrcpy";
 
 import type { CodecDecoder } from "./type.js";
 

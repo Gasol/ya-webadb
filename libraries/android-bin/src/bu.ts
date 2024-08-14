@@ -1,6 +1,6 @@
-import { AdbCommandBase } from "@yume-chan/adb";
-import type { MaybeConsumable, ReadableStream } from "@yume-chan/stream-extra";
-import { ConcatStringStream, TextDecoderStream } from "@yume-chan/stream-extra";
+import { AdbCommandBase } from "@gasol/adb";
+import type { MaybeConsumable, ReadableStream } from "@gasol/stream-extra";
+import { ConcatStringStream, TextDecoderStream } from "@gasol/stream-extra";
 
 export interface AdbBackupOptions {
     user: number;

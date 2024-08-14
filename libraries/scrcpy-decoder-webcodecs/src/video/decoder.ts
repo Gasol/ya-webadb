@@ -1,12 +1,12 @@
-import { EventEmitter } from "@yume-chan/event";
-import type { ScrcpyMediaStreamPacket } from "@yume-chan/scrcpy";
-import { ScrcpyVideoCodecId } from "@yume-chan/scrcpy";
+import { EventEmitter } from "@gasol/event";
+import type { ScrcpyMediaStreamPacket } from "@gasol/scrcpy";
+import { ScrcpyVideoCodecId } from "@gasol/scrcpy";
 import type {
     ScrcpyVideoDecoder,
     ScrcpyVideoDecoderCapability,
-} from "@yume-chan/scrcpy-decoder-tinyh264";
-import type { WritableStreamDefaultController } from "@yume-chan/stream-extra";
-import { WritableStream } from "@yume-chan/stream-extra";
+} from "@gasol/scrcpy-decoder-tinyh264";
+import type { WritableStreamDefaultController } from "@gasol/stream-extra";
+import { WritableStream } from "@gasol/stream-extra";
 
 import { Av1Codec, H264Decoder, H265Decoder } from "./codec/index.js";
 import type { CodecDecoder } from "./codec/type.js";
@@ -149,7 +149,7 @@ export class WebCodecsVideoDecoder implements ScrcpyVideoDecoder {
         return this.#framesSkipped;
     }
 
-    #sizeChanged = new EventEmitter<{ width: number; height: number }>();
+    #sizeChanged = new EventEmitter<{ width: number; height: number; }>();
     get sizeChanged() {
         return this.#sizeChanged.event;
     }

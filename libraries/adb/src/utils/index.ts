@@ -1,4 +1,4 @@
-export { decodeUtf8, encodeUtf8 } from "@yume-chan/struct";
+export { decodeUtf8, encodeUtf8 } from "@gasol/struct";
 export * from "./auto-reset-event.js";
 export * from "./base64.js";
 export * from "./hex.js";

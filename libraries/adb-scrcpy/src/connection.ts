@@ -1,19 +1,19 @@
-import type { Adb, AdbSocket } from "@yume-chan/adb";
-import { AdbReverseNotSupportedError, NOOP } from "@yume-chan/adb";
+import type { Adb, AdbSocket } from "@gasol/adb";
+import { AdbReverseNotSupportedError, NOOP } from "@gasol/adb";
 import { delay } from "@yume-chan/async";
-import type { Disposable } from "@yume-chan/event";
+import type { Disposable } from "@gasol/event";
 import type {
     Consumable,
     PushReadableStreamController,
     ReadableStream,
     ReadableStreamDefaultReader,
     ReadableWritablePair,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 import {
     BufferedReadableStream,
     PushReadableStream,
-} from "@yume-chan/stream-extra";
-import type { ValueOrPromise } from "@yume-chan/struct";
+} from "@gasol/stream-extra";
+import type { ValueOrPromise } from "@gasol/struct";
 
 export interface AdbScrcpyConnectionOptions {
     scid: number;

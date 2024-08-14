@@ -1,5 +1,5 @@
 {
-    "name": "@yume-chan/pcm-player",
+    "name": "@gasol/pcm-player",
     "version": "0.0.24",
     "description": "Play raw audio sample stream using Web Audio API",
     "keywords": [
@@ -11,14 +11,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/packages/pcm-player#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/packages/pcm-player#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "packages/pcm-player"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
@@ -31,8 +31,8 @@
     },
     "devDependencies": {
         "@types/audioworklet": "^0.0.59",
-        "@yume-chan/eslint-config": "workspace:^1.0.0",
-        "@yume-chan/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^1.0.0",
+        "@gasol/tsconfig": "workspace:^1.0.0",
         "prettier": "^3.3.3",
         "typescript": "^5.5.4"
     }

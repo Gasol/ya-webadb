@@ -1,5 +1,5 @@
-import type { ReadableStream, TransformStream } from "@yume-chan/stream-extra";
-import type { AsyncExactReadable, ValueOrPromise } from "@yume-chan/struct";
+import type { ReadableStream, TransformStream } from "@gasol/stream-extra";
+import type { AsyncExactReadable, ValueOrPromise } from "@gasol/struct";
 
 import type {
     ScrcpyBackOrScreenOnControlMessage,

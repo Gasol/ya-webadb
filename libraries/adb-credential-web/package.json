@@ -1,7 +1,7 @@
 {
-    "name": "@yume-chan/adb-credential-web",
+    "name": "@gasol/adb-credential-web",
     "version": "0.0.24",
-    "description": "Credential Store for `@yume-chan/adb` using WebCrypto and IndexedDB APIs.",
+    "description": "Credential Store for `@gasol/adb` using WebCrypto and IndexedDB APIs.",
     "keywords": [
         "adb"
     ],
@@ -11,14 +11,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/main/libraries/adb-credential-web#readme",
+    "homepage": "https://github.com/Gasol/ya-webadb/tree/main/libraries/adb-credential-web#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/Gasol/ya-webadb.git",
         "directory": "libraries/adb-credential-web"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/Gasol/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
@@ -30,11 +30,11 @@
         "prepublishOnly": "npm run build"
     },
     "dependencies": {
-        "@yume-chan/adb": "workspace:^0.0.24"
+        "@gasol/adb": "workspace:^0.0.24"
     },
     "devDependencies": {
-        "@yume-chan/eslint-config": "workspace:^1.0.0",
-        "@yume-chan/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^1.0.0",
+        "@gasol/tsconfig": "workspace:^1.0.0",
         "prettier": "^3.3.3",
         "typescript": "^5.5.4"
     }

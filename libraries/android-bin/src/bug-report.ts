@@ -1,9 +1,9 @@
 // cspell: ignore bugreport
 // cspell: ignore bugreportz
 
-import type { Adb, AdbSync } from "@yume-chan/adb";
-import { AdbCommandBase, AdbSubprocessShellProtocol } from "@yume-chan/adb";
-import type { AbortSignal, ReadableStream } from "@yume-chan/stream-extra";
+import type { Adb, AdbSync } from "@gasol/adb";
+import { AdbCommandBase, AdbSubprocessShellProtocol } from "@gasol/adb";
+import type { AbortSignal, ReadableStream } from "@gasol/stream-extra";
 import {
     AbortController,
     PushReadableStream,
@@ -11,7 +11,7 @@ import {
     TextDecoderStream,
     WrapReadableStream,
     WritableStream,
-} from "@yume-chan/stream-extra";
+} from "@gasol/stream-extra";
 
 export interface BugReportCapabilities {
     supportsBugReport: boolean;
@@ -251,7 +251,7 @@ export class BugReport extends AdbCommandBase {
             throw new Error("bugreportz did not return file name");
         }
 
-        // Design choice: we don't automatically pull the file to avoid more dependency on `@yume-chan/adb`
+        // Design choice: we don't automatically pull the file to avoid more dependency on `@gasol/adb`
         return filename;
     }
 

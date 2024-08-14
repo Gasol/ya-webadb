@@ -1,5 +1,5 @@
 import { PromiseResolver } from "@yume-chan/async";
-import type { ValueOrPromise } from "@yume-chan/struct";
+import type { ValueOrPromise } from "@gasol/struct";
 
 import type {
     QueuingStrategy,

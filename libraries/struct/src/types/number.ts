@@ -8,7 +8,7 @@ import {
     setInt32,
     setUint16,
     setUint32,
-} from "@yume-chan/no-data-view";
+} from "@gasol/no-data-view";
 
 import type {
     AsyncExactReadable,
