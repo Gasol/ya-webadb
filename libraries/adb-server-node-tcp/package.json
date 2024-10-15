@@ -32,15 +32,15 @@
         "lint": "run-eslint && prettier src/**/*.ts --write --tab-width 4"
     },
     "dependencies": {
-        "@gasol/adb": "workspace:^0.0.24",
-        "@gasol/stream-extra": "workspace:^0.0.24",
-        "@gasol/struct": "workspace:^0.0.24"
+        "@gasol/adb": "workspace:^",
+        "@gasol/stream-extra": "workspace:^",
+        "@gasol/struct": "workspace:^"
     },
     "devDependencies": {
-        "@types/node": "^22.2.0",
-        "@gasol/eslint-config": "workspace:^1.0.0",
-        "@gasol/tsconfig": "workspace:^1.0.0",
+        "@types/node": "^22.7.4",
+        "@gasol/eslint-config": "workspace:^",
+        "@gasol/tsconfig": "workspace:^",
         "prettier": "^3.3.3",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     }
 }

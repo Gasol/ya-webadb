@@ -6,8 +6,6 @@ import {
     MaybeConsumable,
     PushReadableStream,
     tryClose,
-    WrapWritableStream,
-    WritableStream,
 } from "@gasol/stream-extra";
 import type { ValueOrPromise } from "@gasol/struct";
 
@@ -36,9 +34,9 @@ function nodeSocketToConnection(
                 tryClose(controller);
             });
         }),
-        writable: new WritableStream<Uint8Array>({
-            write: async (chunk) => {
-                await new Promise<void>((resolve, reject) => {
+        writable: new MaybeConsumable.WritableStream<Uint8Array>({
+            write: (chunk) => {
+                return new Promise<void>((resolve, reject) => {
                     socket.write(chunk, (err) => {
                         if (err) {
                             reject(err);
@@ -58,6 +56,11 @@ function nodeSocketToConnection(
     };
 }
 
+/**
+ * An `AdbServerClient.ServerConnector` implementation for Node.js.
+ *
+ * [Online Documentation](https://docs.tangoapp.dev/tango/server/client/)
+ */
 export class AdbServerNodeTcpConnector
     implements AdbServerClient.ServerConnector {
     readonly spec: SocketConnectOpts;
@@ -94,9 +97,7 @@ export class AdbServerNodeTcpConnector
                 await handler({
                     service: address!,
                     readable: connection.readable,
-                    writable: new WrapWritableStream(
-                        connection.writable,
-                    ).bePipedThroughFrom(new MaybeConsumable.UnwrapStream()),
+                    writable: connection.writable,
                     get closed() {
                         return connection.closed;
                     },
@@ -129,7 +130,7 @@ export class AdbServerNodeTcpConnector
 
         if (!address) {
             const info = server.address() as AddressInfo;
-            address = `tcp:${info.address}:${info.port}`;
+            address = `tcp:${info.port}`;
         }
 
         this.#listeners.set(address, server);

@@ -32,17 +32,17 @@
         "prepublishOnly": "npm run build"
     },
     "dependencies": {
-        "@gasol/adb": "workspace:^0.0.24",
+        "@gasol/adb": "workspace:^",
         "@yume-chan/async": "^2.2.0",
-        "@gasol/event": "workspace:^0.0.24",
-        "@gasol/scrcpy": "workspace:^0.0.24",
-        "@gasol/stream-extra": "workspace:^0.0.24",
-        "@gasol/struct": "workspace:^0.0.24"
+        "@gasol/event": "workspace:^",
+        "@gasol/scrcpy": "workspace:^",
+        "@gasol/stream-extra": "workspace:^",
+        "@gasol/struct": "workspace:^"
     },
     "devDependencies": {
-        "@gasol/eslint-config": "workspace:^1.0.0",
-        "@gasol/tsconfig": "workspace:^1.0.0",
+        "@gasol/eslint-config": "workspace:^",
+        "@gasol/tsconfig": "workspace:^",
         "prettier": "^3.3.3",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     }
 }

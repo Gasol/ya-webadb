@@ -6,11 +6,10 @@ import type {
     AbortSignal,
     ReadableWritablePair,
     WritableStreamDefaultWriter,
+    MaybeConsumable,
 } from "@gasol/stream-extra";
 import {
     BufferedReadableStream,
-    MaybeConsumable,
-    WrapWritableStream,
     tryCancel,
     tryClose,
 } from "@gasol/stream-extra";
@@ -126,6 +125,11 @@ class AdbServerStream {
     }
 }
 
+/**
+ * Client for the ADB Server.
+ *
+ * [Online Documentation](https://docs.tangoapp.dev/tango/server/client/)
+ */
 export class AdbServerClient {
     static readonly VERSION = 41;
 
@@ -206,8 +210,8 @@ export class AdbServerClient {
     readonly wireless = new AdbServerClient.WirelessCommands(this);
     readonly mDns = new AdbServerClient.MDnsCommands(this);
 
-    constructor(connection: AdbServerClient.ServerConnector) {
-        this.connector = connection;
+    constructor(connector: AdbServerClient.ServerConnector) {
+        this.connector = connector;
     }
 
     async createConnection(
@@ -280,7 +284,11 @@ export class AdbServerClient {
     }
 
     /**
-     * `adb devices -l`
+     * Get a list of connected devices from ADB Server.
+     *
+     * Equivalent ADB Command: `adb devices -l`
+     *
+     * [Online Documentation](https://docs.tangoapp.dev/tango/server/devices/)
      */
     async getDevices(): Promise<AdbServerClient.Device[]> {
         const connection = await this.createConnection("host:devices-l");
@@ -293,11 +301,9 @@ export class AdbServerClient {
     }
 
     /**
-     * Track the device list.
+     * Monitors device list changes.
      *
-     * @param signal An optional `AbortSignal` to stop tracking
-     *
-     * When `signal` is aborted, `trackDevices` will return normally, instead of throwing `signal.reason`.
+     * [Online Documentation](https://docs.tangoapp.dev/tango/server/watch/)
      */
     async *trackDevices(
         signal?: AbortSignal,
@@ -430,9 +436,7 @@ export class AdbServerClient {
                 transportId,
                 service,
                 readable: socket.readable,
-                writable: new WrapWritableStream(
-                    socket.writable,
-                ).bePipedThroughFrom(new MaybeConsumable.UnwrapStream()),
+                writable: socket.writable,
                 get closed() {
                     return socket.closed;
                 },
@@ -491,6 +495,11 @@ export class AdbServerClient {
         }
     }
 
+    /**
+     * Creates an ADB Transport for the specified device.
+     *
+     * [Online Documentation](https://docs.tangoapp.dev/tango/server/transport/)
+     */
     async createTransport(
         device: AdbServerClient.DeviceSelector,
     ): Promise<AdbServerTransport> {
@@ -555,7 +564,7 @@ export namespace AdbServerClient {
     }
 
     export interface ServerConnection
-        extends ReadableWritablePair<Uint8Array, Uint8Array>,
+        extends ReadableWritablePair<Uint8Array, MaybeConsumable<Uint8Array>>,
         Closeable {
         get closed(): Promise<void>;
     }
@@ -579,6 +588,11 @@ export namespace AdbServerClient {
         transportId: bigint;
     }
 
+    /**
+     * A union type for selecting a device.
+     *
+     * [Online Documentation](https://docs.tangoapp.dev/tango/server/selector/)
+     */
     export type DeviceSelector =
         | { transportId: bigint; }
         | { serial: string; }

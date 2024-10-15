@@ -30,10 +30,10 @@
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
-        "@types/audioworklet": "^0.0.59",
-        "@gasol/eslint-config": "workspace:^1.0.0",
-        "@gasol/tsconfig": "workspace:^1.0.0",
+        "@types/audioworklet": "^0.0.60",
+        "@gasol/eslint-config": "workspace:^",
+        "@gasol/tsconfig": "workspace:^",
         "prettier": "^3.3.3",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     }
 }
