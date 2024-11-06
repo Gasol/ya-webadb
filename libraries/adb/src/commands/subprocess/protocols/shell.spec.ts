@@ -1,9 +1,9 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
 
-import { PromiseResolver } from "@yume-chan/async";
 import type { ReadableStreamDefaultController } from "@gasol/stream-extra";
 import { ReadableStream, WritableStream } from "@gasol/stream-extra";
+import { PromiseResolver } from "@yume-chan/async";
 
 import type { AdbSocket } from "../../../adb.js";
 

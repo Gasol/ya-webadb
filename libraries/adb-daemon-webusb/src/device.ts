@@ -1,8 +1,4 @@
-import type {
-    AdbDaemonDevice,
-    AdbPacketData,
-    AdbPacketInit,
-} from "@gasol/adb";
+import type { AdbDaemonDevice, AdbPacketData, AdbPacketInit } from "@gasol/adb";
 import {
     AdbPacketHeader,
     AdbPacketSerializeStream,
@@ -83,7 +79,8 @@ class Uint8ArrayExactReadable implements ExactReadable {
 }
 
 export class AdbDaemonWebUsbConnection
-    implements ReadableWritablePair<AdbPacketData, Consumable<AdbPacketInit>> {
+    implements ReadableWritablePair<AdbPacketData, Consumable<AdbPacketInit>>
+{
     #device: AdbDaemonWebUsbDevice;
     get device() {
         return this.#device;
@@ -220,7 +217,7 @@ export class AdbDaemonWebUsbConnection
                 // Add `payload` field to its type, it's assigned below.
                 const packet = AdbPacketHeader.deserialize(
                     stream,
-                ) as AdbPacketHeader & { payload: Uint8Array; };
+                ) as AdbPacketHeader & { payload: Uint8Array };
 
                 if (packet.magic !== (packet.command ^ 0xffffffff)) {
                     continue;

@@ -1,9 +1,4 @@
-import {
-    getInt64,
-    getUint64,
-    setInt64,
-    setUint64,
-} from "@gasol/no-data-view";
+import { getInt64, getUint64, setInt64, setUint64 } from "@gasol/no-data-view";
 
 import type {
     AsyncExactReadable,

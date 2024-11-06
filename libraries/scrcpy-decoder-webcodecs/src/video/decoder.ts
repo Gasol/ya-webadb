@@ -148,7 +148,7 @@ export class WebCodecsVideoDecoder implements ScrcpyVideoDecoder {
         return this.#framesSkipped;
     }
 
-    #sizeChanged = new EventEmitter<{ width: number; height: number; }>();
+    #sizeChanged = new EventEmitter<{ width: number; height: number }>();
     get sizeChanged() {
         return this.#sizeChanged.event;
     }

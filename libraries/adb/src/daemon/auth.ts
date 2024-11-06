@@ -1,7 +1,7 @@
-import { PromiseResolver } from "@yume-chan/async";
 import type { Disposable } from "@gasol/event";
 import type { ValueOrPromise } from "@gasol/struct";
 import { EMPTY_UINT8_ARRAY } from "@gasol/struct";
+import { PromiseResolver } from "@yume-chan/async";
 
 import {
     calculateBase64EncodedLength,
@@ -67,11 +67,10 @@ export interface AdbAuthenticator {
     ): AsyncIterable<AdbPacketData>;
 }
 
-export const AdbSignatureAuthenticator: AdbAuthenticator = async function*(
+export const AdbSignatureAuthenticator: AdbAuthenticator = async function* (
     credentialStore: AdbCredentialStore,
     getNextRequest: () => Promise<AdbPacketData>,
 ): AsyncIterable<AdbPacketData> {
-    // eslint-disable-next-line @typescript-eslint/await-thenable
     for await (const key of credentialStore.iterateKeys()) {
         const packet = await getNextRequest();
 
@@ -89,7 +88,7 @@ export const AdbSignatureAuthenticator: AdbAuthenticator = async function*(
     }
 };
 
-export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function*(
+export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function* (
     credentialStore: AdbCredentialStore,
     getNextRequest: () => Promise<AdbPacketData>,
 ): AsyncIterable<AdbPacketData> {
@@ -100,7 +99,7 @@ export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function*(
     }
 
     let privateKey: AdbPrivateKey | undefined;
-    // eslint-disable-next-line @typescript-eslint/await-thenable
+
     for await (const key of credentialStore.iterateKeys()) {
         privateKey = key;
         break;
@@ -119,8 +118,8 @@ export const AdbPublicKeyAuthenticator: AdbAuthenticator = async function*(
         : EMPTY_UINT8_ARRAY;
     const publicKeyBuffer = new Uint8Array(
         publicKeyBase64Length +
-        (nameBuffer.length ? nameBuffer.length + 1 : 0) + // Space character + name
-        1, // Null character
+            (nameBuffer.length ? nameBuffer.length + 1 : 0) + // Space character + name
+            1, // Null character
     );
 
     adbGeneratePublicKey(privateKey.buffer, publicKeyBuffer);

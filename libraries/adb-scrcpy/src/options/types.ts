@@ -25,7 +25,7 @@ export abstract class AdbScrcpyOptions<
             // but we need to pass an instance here.
             // A normal `function` can be used as a constructor, and constructors can return
             // any object to override the default return value.
-            function() {
+            function () {
                 return base;
             } as never,
             // HACK: `base.value` contains `SkipDefaultMark`, so it will be used as is,

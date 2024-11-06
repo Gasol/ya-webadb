@@ -29,7 +29,7 @@ program
     });
 
 function createClient() {
-    const opts: { H: string; P: number; } = program.opts();
+    const opts: { H: string; P: number } = program.opts();
     const connection = new AdbServerNodeTcpConnector({
         host: opts.H,
         port: opts.P,
@@ -43,7 +43,7 @@ program
     .usage("[-l]")
     .description("list connected devices (-l for long output)")
     .option("-l", "long output", false)
-    .action(async (options: { l: boolean; }) => {
+    .action(async (options: { l: boolean }) => {
         function appendTransportInfo(key: string, value: string | undefined) {
             if (value) {
                 return ` ${key}:${value}`;
@@ -100,21 +100,21 @@ async function createAdb(options: DeviceCommandOptions) {
     const transport = await client.createTransport(
         options.d
             ? {
-                usb: true,
-            }
+                  usb: true,
+              }
             : options.e
-                ? {
+              ? {
                     tcp: true,
                 }
-                : options.s !== undefined
-                    ? {
-                        serial: options.s,
+              : options.s !== undefined
+                ? {
+                      serial: options.s,
+                  }
+                : options.t !== undefined
+                  ? {
+                        transportId: options.t,
                     }
-                    : options.t !== undefined
-                        ? {
-                            transportId: options.t,
-                        }
-                        : undefined,
+                  : undefined,
     );
     const adb = new Adb(transport);
     return adb;

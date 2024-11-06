@@ -9,14 +9,28 @@ import type { ScrcpyAudioStreamMetadata } from "./codec.js";
 import { ScrcpyAudioCodec } from "./codec.js";
 import { ScrcpyOptions } from "./types.js";
 
+// https://github.com/Genymobile/scrcpy/pull/4441
+export enum ScrcpyDisplayOrientation2_3 {
+    Zero = "0",
+    Ninety = "90",
+    OneEighty = "180",
+    TwoSeventy = "270",
+    Flip0 = "flip0",
+    Flip90 = "flip90",
+    Flip180 = "flip180",
+    Flip270 = "flip270",
+}
+
 export interface ScrcpyOptionsInit2_3
     extends Omit<ScrcpyOptionsInit2_2, "audioCodec"> {
     audioCodec?: "raw" | "opus" | "aac" | "flac";
+    displayOrientation?: ScrcpyDisplayOrientation2_3 | undefined;
 }
 
 export class ScrcpyOptions2_3 extends ScrcpyOptions<ScrcpyOptionsInit2_3> {
     static readonly DEFAULTS = {
         ...ScrcpyOptions2_2.DEFAULTS,
+        displayOrientation: undefined,
     } as const satisfies Required<ScrcpyOptionsInit2_3>;
 
     override get defaults(): Required<ScrcpyOptionsInit2_3> {

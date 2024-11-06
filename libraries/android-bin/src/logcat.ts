@@ -53,17 +53,17 @@ export type AndroidLogPriority =
 
 // https://cs.android.com/android/platform/superproject/+/master:system/logging/liblog/logprint.cpp;l=140;drc=8dbf3b2bb6b6d1652d9797e477b9abd03278bb79
 export const AndroidLogPriorityToCharacter: Record<AndroidLogPriority, string> =
-{
-    [AndroidLogPriority.Unknown]: "?",
-    [AndroidLogPriority.Default]: "?",
-    [AndroidLogPriority.Verbose]: "V",
-    [AndroidLogPriority.Debug]: "D",
-    [AndroidLogPriority.Info]: "I",
-    [AndroidLogPriority.Warn]: "W",
-    [AndroidLogPriority.Error]: "E",
-    [AndroidLogPriority.Fatal]: "F",
-    [AndroidLogPriority.Silent]: "S",
-};
+    {
+        [AndroidLogPriority.Unknown]: "?",
+        [AndroidLogPriority.Default]: "?",
+        [AndroidLogPriority.Verbose]: "V",
+        [AndroidLogPriority.Debug]: "D",
+        [AndroidLogPriority.Info]: "I",
+        [AndroidLogPriority.Warn]: "W",
+        [AndroidLogPriority.Error]: "E",
+        [AndroidLogPriority.Fatal]: "F",
+        [AndroidLogPriority.Silent]: "S",
+    };
 
 export const LogcatFormat = {
     Brief: 0,

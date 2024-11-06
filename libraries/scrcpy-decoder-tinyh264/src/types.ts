@@ -11,7 +11,7 @@ export interface ScrcpyVideoDecoderCapability {
 }
 
 export interface ScrcpyVideoDecoder extends Disposable {
-    readonly sizeChanged: Event<{ width: number; height: number; }>;
+    readonly sizeChanged: Event<{ width: number; height: number }>;
     readonly framesRendered: number;
     readonly framesSkipped: number;
     readonly writable: WritableStream<ScrcpyMediaStreamPacket>;
@@ -20,5 +20,5 @@ export interface ScrcpyVideoDecoder extends Disposable {
 export interface ScrcpyVideoDecoderConstructor {
     readonly capabilities: Record<string, ScrcpyVideoDecoderCapability>;
 
-    new(codec: ScrcpyVideoCodecId): ScrcpyVideoDecoder;
+    new (codec: ScrcpyVideoCodecId): ScrcpyVideoDecoder;
 }

@@ -1,6 +1,5 @@
 import type { Adb, AdbSocket } from "@gasol/adb";
 import { AdbReverseNotSupportedError, NOOP } from "@gasol/adb";
-import { delay } from "@yume-chan/async";
 import type { Disposable } from "@gasol/event";
 import type {
     Consumable,
@@ -14,6 +13,7 @@ import {
     PushReadableStream,
 } from "@gasol/stream-extra";
 import type { ValueOrPromise } from "@gasol/struct";
+import { delay } from "@yume-chan/async";
 
 export interface AdbScrcpyConnectionOptions {
     scid: number;

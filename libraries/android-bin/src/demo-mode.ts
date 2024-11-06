@@ -122,10 +122,10 @@ export class DemoMode extends AdbCommandBase {
             command,
             ...(extra
                 ? Object.entries(extra).flatMap(([key, value]) => [
-                    "-e",
-                    key,
-                    value,
-                ])
+                      "-e",
+                      key,
+                      value,
+                  ])
                 : []),
         ]);
     }

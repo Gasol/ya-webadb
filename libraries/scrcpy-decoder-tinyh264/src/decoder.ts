@@ -1,4 +1,3 @@
-import { PromiseResolver } from "@yume-chan/async";
 import { EventEmitter } from "@gasol/event";
 import type { ScrcpyMediaStreamPacket } from "@gasol/scrcpy";
 import {
@@ -7,6 +6,7 @@ import {
     h264ParseConfiguration,
 } from "@gasol/scrcpy";
 import { WritableStream } from "@gasol/stream-extra";
+import { PromiseResolver } from "@yume-chan/async";
 import YuvBuffer from "yuv-buffer";
 import YuvCanvas from "yuv-canvas";
 
@@ -54,7 +54,7 @@ export class TinyH264Decoder implements ScrcpyVideoDecoder {
         return this.#renderer;
     }
 
-    #sizeChanged = new EventEmitter<{ width: number; height: number; }>();
+    #sizeChanged = new EventEmitter<{ width: number; height: number }>();
     get sizeChanged() {
         return this.#sizeChanged.event;
     }
