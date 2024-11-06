@@ -1,3 +1,3 @@
-import { AdbScrcpyOptions2_1 } from "./2_1.js";
+import { AdbScrcpyOptions2_3 } from "./2_3.js";
 
-export class AdbScrcpyOptionsLatest extends AdbScrcpyOptions2_1 {}
+export class AdbScrcpyOptionsLatest extends AdbScrcpyOptions2_3 {}
