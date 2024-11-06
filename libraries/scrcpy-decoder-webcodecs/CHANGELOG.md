@@ -1,5 +1,13 @@
 # Change Log - @yume-chan/scrcpy-decoder-webcodecs
 
+## 2.1.0
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @gasol/scrcpy@2.1.0
+    -   @gasol/scrcpy-decoder-tinyh264@2.1.0
+
 ## 2.0.0
 
 ### Major Changes
