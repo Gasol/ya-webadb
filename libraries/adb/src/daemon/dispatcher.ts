@@ -1,9 +1,4 @@
 import {
-    AsyncOperationManager,
-    PromiseResolver,
-    delay,
-} from "@yume-chan/async";
-import {
     getUint32LittleEndian,
     setUint32LittleEndian,
 } from "@gasol/no-data-view";
@@ -17,6 +12,11 @@ import {
     WritableStream,
 } from "@gasol/stream-extra";
 import { EMPTY_UINT8_ARRAY, decodeUtf8, encodeUtf8 } from "@gasol/struct";
+import {
+    AsyncOperationManager,
+    PromiseResolver,
+    delay,
+} from "@yume-chan/async";
 
 import type { AdbIncomingSocketHandler, AdbSocket, Closeable } from "../adb.js";
 

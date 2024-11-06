@@ -1,4 +1,3 @@
-import { PromiseResolver } from "@yume-chan/async";
 import type {
     PushReadableStreamController,
     ReadableStream,
@@ -12,6 +11,7 @@ import {
 } from "@gasol/stream-extra";
 import type { StructValueType } from "@gasol/struct";
 import Struct, { placeholder } from "@gasol/struct";
+import { PromiseResolver } from "@yume-chan/async";
 
 import type { Adb, AdbSocket } from "../../../adb.js";
 import { AdbFeature } from "../../../features.js";

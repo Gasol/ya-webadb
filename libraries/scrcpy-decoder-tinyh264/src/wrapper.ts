@@ -1,6 +1,6 @@
-import { PromiseResolver } from "@yume-chan/async";
 import type { Disposable } from "@gasol/event";
 import { AutoDisposable, EventEmitter } from "@gasol/event";
+import { PromiseResolver } from "@yume-chan/async";
 
 let worker: Worker | undefined;
 let workerReady = false;
@@ -88,7 +88,7 @@ interface TinyH264DecoderReadyMessage extends TinyH264MessageBase {
 
 interface TinyH264PictureReadyMessage
     extends TinyH264MessageBase,
-    PictureReadyEventArgs {
+        PictureReadyEventArgs {
     type: "pictureReady";
 }
 

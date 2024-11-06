@@ -62,7 +62,8 @@ function nodeSocketToConnection(
  * [Online Documentation](https://docs.tangoapp.dev/tango/server/client/)
  */
 export class AdbServerNodeTcpConnector
-    implements AdbServerClient.ServerConnector {
+    implements AdbServerClient.ServerConnector
+{
     readonly spec: SocketConnectOpts;
 
     readonly #listeners = new Map<string, Server>();

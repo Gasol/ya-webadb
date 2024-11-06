@@ -1,4 +1,3 @@
-import { PromiseResolver } from "@yume-chan/async";
 import type { ReadableWritablePair } from "@gasol/stream-extra";
 import {
     AbortController,
@@ -7,6 +6,7 @@ import {
 } from "@gasol/stream-extra";
 import type { ValueOrPromise } from "@gasol/struct";
 import { decodeUtf8, encodeUtf8 } from "@gasol/struct";
+import { PromiseResolver } from "@yume-chan/async";
 
 import type {
     AdbIncomingSocketHandler,

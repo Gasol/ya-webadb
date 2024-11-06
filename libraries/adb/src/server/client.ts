@@ -1,6 +1,5 @@
 // cspell:ignore tport
 
-import { PromiseResolver } from "@yume-chan/async";
 import { getUint64LittleEndian } from "@gasol/no-data-view";
 import type {
     AbortSignal,
@@ -20,6 +19,7 @@ import {
     decodeUtf8,
     encodeUtf8,
 } from "@gasol/struct";
+import { PromiseResolver } from "@yume-chan/async";
 
 import type { AdbIncomingSocketHandler, AdbSocket, Closeable } from "../adb.js";
 import { AdbBanner } from "../banner.js";
@@ -352,7 +352,7 @@ export class AdbServerClient {
      */
     async getDeviceFeatures(
         device: AdbServerClient.DeviceSelector,
-    ): Promise<{ transportId: bigint; features: AdbFeature[]; }> {
+    ): Promise<{ transportId: bigint; features: AdbFeature[] }> {
         // On paper, `host:features` is a host service (device features are cached in host),
         // so it shouldn't use `createDeviceConnection`,
         // which is used to forward the service to the device.
@@ -565,7 +565,7 @@ export namespace AdbServerClient {
 
     export interface ServerConnection
         extends ReadableWritablePair<Uint8Array, MaybeConsumable<Uint8Array>>,
-        Closeable {
+            Closeable {
         get closed(): Promise<void>;
     }
 
@@ -594,10 +594,10 @@ export namespace AdbServerClient {
      * [Online Documentation](https://docs.tangoapp.dev/tango/server/selector/)
      */
     export type DeviceSelector =
-        | { transportId: bigint; }
-        | { serial: string; }
-        | { usb: true; }
-        | { tcp: true; }
+        | { transportId: bigint }
+        | { serial: string }
+        | { usb: true }
+        | { tcp: true }
         | undefined;
 
     export interface Device {

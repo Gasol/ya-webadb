@@ -1,4 +1,3 @@
-import { PromiseResolver } from "@yume-chan/async";
 import type { Disposable } from "@gasol/event";
 import type {
     PushReadableStreamController,
@@ -8,6 +7,7 @@ import type {
 } from "@gasol/stream-extra";
 import { MaybeConsumable, PushReadableStream } from "@gasol/stream-extra";
 import { EMPTY_UINT8_ARRAY } from "@gasol/struct";
+import { PromiseResolver } from "@yume-chan/async";
 
 import type { AdbSocket } from "../adb.js";
 
@@ -34,7 +34,8 @@ export interface AdbDaemonSocketInit extends AdbDaemonSocketInfo {
 }
 
 export class AdbDaemonSocketController
-    implements AdbDaemonSocketInfo, AdbSocket, Disposable {
+    implements AdbDaemonSocketInfo, AdbSocket, Disposable
+{
     readonly #dispatcher!: AdbPacketDispatcher;
 
     readonly localId!: number;
