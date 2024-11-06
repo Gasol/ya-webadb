@@ -1,6 +1,6 @@
 {
     "name": "@gasol/adb-scrcpy",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Use `@gasol/adb` to bootstrap `@gasol/scrcpy`.",
     "keywords": [
         "adb",

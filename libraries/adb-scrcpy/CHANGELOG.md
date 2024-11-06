@@ -1,5 +1,11 @@
 # Change Log - @yume-chan/adb-scrcpy
 
+## 2.2.0
+
+### Minor Changes
+
+-   Export 2_3 options
+
 ## 2.1.0
 
 ### Minor Changes
